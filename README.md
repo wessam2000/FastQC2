@@ -1,2 +1,1 @@
-# Gene Analysis
- this program will be able to analysis the sequences of certain gene and give information about the amino acid that the gene consisted of
+This is mobile application called FastQC2 it makes analysis on biological data on fastq format it dose same function like FastQc but this gone be an android app 

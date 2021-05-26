@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-class PerBaseSequanceQuality extends StatelessWidget {
+class PerBaseGCContent extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -8,8 +8,8 @@ class PerBaseSequanceQuality extends StatelessWidget {
           backgroundColor: Colors.blueGrey,
           leading: Image(image: AssetImage('assets/images/FastaqC^2 Logo.png')),
         ),
-          body: Center(
-          child: Image(image: AssetImage('assets/images/Quality Scores across all bases.jpg')),
+        body: Center(
+          child: Image(image: AssetImage('assets/images/Per Base GC Content.jpg')),
         ),
         bottomNavigationBar:FlatButton(
           child: Icon(Icons.arrow_back_ios,),

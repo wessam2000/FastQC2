@@ -1,31 +1,29 @@
-import 'package:fastaqc/perBaseSequanceQuality.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:fastaqc/basic_statistics.dart';
+import 'Login.dart';
+import 'Sign_Up.dart';
 
 void main() {
   runApp(MyApp());
 }
 
 class MyApp extends StatelessWidget {
-  // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      debugShowCheckedModeBanner: false,
-      title: 'FastaqC',
+        debugShowCheckedModeBanner: false,
+      title: 'FASTAQC^2',
       theme: ThemeData(
-        visualDensity: VisualDensity.adaptivePlatformDensity,
-      ),
-      home: MyHomePage(title: 'FastaqC'),
+        primarySwatch:Colors.blue,
+    ),
+      home:MyHomePage(title: 'FASTAQC^2'),
     );
   }
 }
-
 class MyHomePage extends StatefulWidget {
   MyHomePage({Key key, this.title}) : super(key: key);
 
-  
+
 
   final String title;
 
@@ -38,42 +36,55 @@ class _MyHomePageState extends State<MyHomePage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        title: Text(widget.title),
-        backgroundColor: Colors.black12,
-        leading: Image(image: AssetImage('assets/images/Fastaqc Logo.png')),
-      ),
-      body: Row(
-        mainAxisAlignment: MainAxisAlignment.center,
-        crossAxisAlignment: CrossAxisAlignment.center,
-        children:[
-           Column(
-            mainAxisAlignment: MainAxisAlignment.center,
-            crossAxisAlignment: CrossAxisAlignment.center,
-            children:[
-            FlatButton(
-            child: Text('BasicStatistics'),
-            color:Colors.black12,
-            onPressed: (){
-              Navigator.push(context, MaterialPageRoute(builder: (context)=>BasicStatistics()));
-            },
+        appBar: AppBar(
+        title: Text("FASTAQC^2"),
+    backgroundColor: Colors.blueGrey,
+    leading: Image(image: AssetImage('assets/images/FastaqC^2 Logo.png')),
         ),
-          ]),
-        Column(
-              mainAxisAlignment: MainAxisAlignment.center,
-              crossAxisAlignment: CrossAxisAlignment.center,
-              children:[
-                FlatButton(
-                  child: Text('PerBaseSequanceQuality'),
-                  color:Colors.black12,
-                  onPressed: (){
-                    Navigator.push(context, MaterialPageRoute(builder: (context)=>PerBaseSequanceQuality()));
-                  },
+        body:Container(
+          padding: EdgeInsets.all(10),
+          child: ListView(
+              children: <Widget>[
+                Container(
+                  height: 250,
+                  padding: EdgeInsets.all(10),
                 ),
+                Container(
+                    height: 50,
+                    padding: EdgeInsets.fromLTRB(50, 0, 50, 0),
+                    child: RaisedButton(
+
+                      textColor: Colors.white,
+                      color: Colors.blueGrey,
+                      child: Text('Login',),
+                      onPressed: () {
+                        Navigator.push(context, MaterialPageRoute(builder: (context)=>LoginPage()));
+                      },
+                    )),
+                Container(
+                    child: Row(
+                      children: <Widget>[
+                        Text('Does not have account?'),
+                        FlatButton(
+                          textColor: Colors.blueGrey,
+                          child: Text(
+                            'Sign Up',
+                            style: TextStyle(fontSize: 20),
+                          ),
+                          onPressed: () {
+                            //signup screen
+                            Navigator.push(context, MaterialPageRoute(builder: (context)=>SignUpPage()));
+                          },
+                        )
+                      ],
+                      mainAxisAlignment: MainAxisAlignment.center,
+                    ))
+
               ]),
 
-       
-        ])
+        )
     );
+
+
   }
-  }
+}
